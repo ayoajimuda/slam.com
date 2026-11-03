@@ -82,7 +82,7 @@
   position: relative;
   z-index: 1;
   font-family: var(--font-condensed);
-  font-size: clamp(12px, 1.4vw, 18px);
+  font-size: clamp(13px, 1.7vw, 20px);
   letter-spacing: 0.3em;
   color: rgba(0, 0, 0, 0.6);
   margin-top: 28px;
@@ -94,7 +94,7 @@
   bottom: 32px;
   right: 36px;
   font-family: var(--font-condensed);
-  font-size: 10px;
+  font-size: 15px;
   letter-spacing: 0.2em;
   color: rgba(0, 0, 0, 0.35);
   writing-mode: vertical-rl;

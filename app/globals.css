@@ -1,9 +1,3 @@
-/*
- * Site-wide styles only: theme variables, base element styles, shared classes and animations.
- * Page and component styles live in the .css file next to each page or component.
- * Those files are global too, so their classes are prefixed (home-, tricks-, nav-, ...) to avoid clashes.
- * The colour values below are stand-ins — replace them with your own.
- */
 :root {
   --background: #f4f2ee;
   --foreground: #080808;
@@ -81,14 +75,4 @@ button {
 
 .chip-primary {
   border: 0;
-}
-
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
 }

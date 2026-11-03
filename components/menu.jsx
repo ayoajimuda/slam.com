@@ -3,20 +3,14 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useEffect, useRef } from 'react'
-import '@/styles/menu.css'
+import '../styles/menu.css'
 
 function MenuLink({ href, index, onNavigate, children }) {
     const pathname = usePathname()
     const active = href === pathname
 
     return (
-        <Link
-            className="nav-link"
-            href={href}
-            aria-current={active ? 'page' : undefined}
-            onClick={(e) => onNavigate(e, href)}
-            style={{ '--i': index }}
-        >
+        <Link className="nav-link" href={href} aria-current={active ? 'page' : undefined} onClick={(e) => onNavigate(e, href)} style={{ '--i': index }} >
             {children}
             {active && <span className="nav-now">← NOW</span>}
         </Link>
@@ -68,12 +62,15 @@ export default function Menu({ open, onClose, menuButtonRef }) {
 
             <nav id="main-menu" className="nav-grid" onClick={(e) => e.stopPropagation()}>
                 <MenuLink href="/" index={0} onNavigate={handleNav}>HOME</MenuLink>
-                <MenuLink href="/tricks" index={1} onNavigate={handleNav}>TRICKS</MenuLink>
-                <MenuLink href="/progress" index={2} onNavigate={handleNav}>PROGRESS</MenuLink>
+                <MenuLink href="/tricks" index={1} onNavigate={handleNav}>TRICK LIBRARY</MenuLink>
+                <MenuLink href="/progress" index={2} onNavigate={handleNav}>DASHBOARD</MenuLink>
                 <MenuLink href="/map" index={3} onNavigate={handleNav}>SKATE MAP</MenuLink>
+                <MenuLink href="/customize" index={4} onNavigate={handleNav}>CUSTOMIZE</MenuLink>
+                <MenuLink href="/blog" index={5} onNavigate={handleNav}>BLOG</MenuLink>
+                <MenuLink href="/community" index={6} onNavigate={handleNav}>COMMUNITY</MenuLink>
+                <MenuLink href="/account" index={7} onNavigate={handleNav}>ACCOUNT</MenuLink>
             </nav>
-
-            <p className="nav-footer">SLAM.COM — EST. 2026</p>
+                <p className="nav-footer">SLAM.COM — EST. 2026</p>
         </div>
     )
 }
