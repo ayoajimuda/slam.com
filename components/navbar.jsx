@@ -1,7 +1,7 @@
 'use client'
 
 import { useCallback, useRef, useState } from 'react';
-import Menu from '@/components/menu'
+import Menu from '@/components/Menu'
 import '@/styles/navbar.css'
 
 export default function NavBar(){

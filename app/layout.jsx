@@ -2,7 +2,7 @@ import { Geist, Geist_Mono, JetBrains_Mono, Urbanist, Oswald, Barlow_Condensed, 
 import { Bronson } from "./fonts";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import NavBar from '@/components/navbar'
+import NavBar from '@/components/NavBar'
 
 const anton = Anton({ 
   weight: '400', 
