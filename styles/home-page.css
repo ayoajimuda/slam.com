@@ -54,7 +54,7 @@
 .home-glitch {
   font-family: var(--font-bronson);
   font-weight: 400;
-  font-size: clamp(42px, 12vw, 88px);
+  font-size: clamp(42px, 12vw, 168px);
   line-height: 0.88;
   letter-spacing: -0.02em;
   margin: 0;
@@ -78,10 +78,10 @@
   animation: home-glitch 0.4s steps(2) 2;
 }
 
-.home-kicker {
+.home-subtitle {
   position: relative;
   z-index: 1;
-  font-family: var(--font-bronson);
+  font-family: var(--font-condensed);
   font-size: clamp(12px, 1.4vw, 18px);
   letter-spacing: 0.3em;
   color: rgba(0, 0, 0, 0.6);
@@ -93,7 +93,7 @@
   position: absolute;
   bottom: 32px;
   right: 36px;
-  font-family: var(--font-bronson);
+  font-family: var(--font-condensed);
   font-size: 10px;
   letter-spacing: 0.2em;
   color: rgba(0, 0, 0, 0.35);

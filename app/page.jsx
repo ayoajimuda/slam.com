@@ -49,11 +49,13 @@ export default function Home() {
       <title>SLAM.COM</title>
       <meta name="description" content="Learn to skate & explore the community" />
       {background && (<Image loader={imgixLoader} src={background.url} alt="" fill sizes="100vw" loading='eager' className="home-background" />)}
+      <div className="home-fade" />
+      <div className="home-grain" />
       <div className="home-accent-line" />
       <div className="home-title-wrap">
-        <div className="home-title">
-          <h1 className="home-glitch-effect">SLAM.COM</h1>
-          </div>
+        <div className="home-glitch-effect">
+        <h1 className="home-title">SLAM.COM</h1>
+      </div>
       </div>
       <p className="home-subtitle">JUST GO SKATING</p>
       <p className="home-side-note">NO FEAR, NO OVERTHINKING, JUST GO SKATING</p>

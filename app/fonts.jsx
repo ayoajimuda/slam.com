@@ -1,6 +1,6 @@
 import localFont from "next/font/local";
 
-export const bronson = localFont({
+export const Bronson = localFont({
   src: "../public/fonts/bronson/BRONSON-Black.ttf",
   variable: "--font-bronson",
   display: "swap",

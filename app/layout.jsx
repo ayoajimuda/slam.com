@@ -1,9 +1,21 @@
-import { Geist, Geist_Mono, JetBrains_Mono } from "next/font/google";
-import { Urbanist } from 'next/font/google';
-import { bronson } from "./fonts";
-
+import { Geist, Geist_Mono, JetBrains_Mono, Urbanist, Oswald, Barlow_Condensed, Anton } from "next/font/google";
+import { Bronson } from "./fonts";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+
+const anton = Anton({ 
+  weight: '400', 
+  subsets: ['latin'], 
+  variable: '--font-anton', 
+  display: 'swap' 
+});
+
+const barlow = Barlow_Condensed({ 
+  weight: ['400', '700'], 
+  subsets: ['latin'], 
+  variable: '--font-barlow', 
+  display: 'swap' 
+});
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -20,6 +32,12 @@ const jetbrainsMono = JetBrains_Mono({
   variable: "--font-mono",
 });
 
+const oswald = Oswald({
+  subsets: ['latin'],
+  weight: ['400', '500'],
+  variable: '--font-subtitle',
+});
+
 const urbanist = Urbanist({
     subsets: ['latin'],
     weight: ['500', '600', '700'],
@@ -27,11 +45,11 @@ const urbanist = Urbanist({
 });
 
 export const metadata = {
-  title: "Slam.com",
+  title: "SLAM.COM",
   description: "A way for skaters to learn, connect and explore",
   appleWebApp: {
     capable: true,
-    title: "Slam",
+    title: "SLAM.COM",
     statusBarStyle: "default",
   },
 };
@@ -44,7 +62,7 @@ export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-mono", jetbrainsMono.variable, urbanist.variable, bronson.variable)}
+      className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-mono", jetbrainsMono.variable, urbanist.variable, Bronson.variable, oswald.variable, anton.variable, barlow.variable)}
     >
       <body className="min-h-full flex flex-col">
         {children}
