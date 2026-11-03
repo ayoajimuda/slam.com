@@ -1,16 +1,17 @@
 'use client'
 
-import Link from 'next/link';
-import { usePathname } from 'next/navigation';
-import { useEffect, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
+import Menu from '@/components/menu'
 import '@/styles/navbar.css'
 
 export default function NavBar(){
     const [open, setOpen] = useState(false)
     const [authMessage, setAuthMessage] = useState('')
     const menuButtonRef = useRef(null)
-
-    return (
+    const closeMenu = useCallback(() => setOpen(false), [])
+     return (
+      <>
+      <header>
       <div className="nav-top-actions">
         {!open && (
           <div className="nav-auth-actions">
@@ -30,5 +31,8 @@ export default function NavBar(){
           MENU
         </button>
       </div>
-      )
+      </header>
+      <Menu open={open} onClose={closeMenu} menuButtonRef={menuButtonRef} />
+    </>
+  )
 }
