@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { HOME_BACKGROUNDS } from '@/data/backgrounds';
 import '../styles/home-page.css';
+import '../styles/glitch.css';
 
 const STORAGE_KEY = 'slam-background'
 
@@ -53,9 +54,9 @@ export default function Home() {
       <div className="home-grain" />
       <div className="home-accent-line" />
       <div className="home-title-wrap">
-        <div className="home-glitch-effect">
         <h1 className="home-title">SLAM.COM</h1>
-      </div>
+        <span className="home-glitch-effect home-glitch--black" aria-hidden="true">SLAM.COM</span>
+        <span className="home-glitch-effect home-glitch--white" aria-hidden="true">SLAM.COM</span>
       </div>
       <p className="home-subtitle">JUST GO SKATING</p>
       <p className="home-side-note">NO FEAR, NO OVERTHINKING, JUST GO SKATING</p>
