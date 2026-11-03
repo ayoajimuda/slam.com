@@ -59,7 +59,7 @@ export default function Home() {
         <span className="home-glitch-effect home-glitch--white" aria-hidden="true">SLAM.COM</span>
       </div>
       <p className="home-subtitle">NO FEAR, NO OVERTHINKING, JUST GO SKATING</p>
-      <p className="home-side-note">JUST GO SKATING, JUST GO SKATING</p>
+      <p className="home-side-note">JUST GO SKATING, JUST GO SKATING, JUST GO SKATING, JUST GO SKATING, JUST GO SKATING</p>
     </main>
   );
 }

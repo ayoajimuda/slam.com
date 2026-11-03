@@ -2,7 +2,7 @@ import { Geist, Geist_Mono, JetBrains_Mono, Urbanist, Oswald, Barlow_Condensed, 
 import { Bronson } from "./fonts";
 import "./globals.css";
 import { cn } from "@/lib/utils";
-import NavBar from '@/components/NavBar'
+import Menu from "@/components/Menu"
 
 const anton = Anton({ 
   weight: '400', 
@@ -66,7 +66,7 @@ export default function RootLayout({ children }) {
       className={cn("h-full", "antialiased", geistSans.variable, geistMono.variable, "font-mono", jetbrainsMono.variable, urbanist.variable, Bronson.variable, oswald.variable, anton.variable, barlow.variable)}
     >
       <body className="min-h-full flex flex-col">
-        <NavBar></NavBar>
+        <Menu></Menu>
         {children}
       </body>
     </html>
