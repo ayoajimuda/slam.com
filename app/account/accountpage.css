@@ -1,0 +1,263 @@
+.account {
+  --text: #000;
+  --muted: #6f6f6f;
+  --border: #cfcfcf;
+  --tab-track: #f1f1f1;
+  --soft-shadow: 0 1px 4px rgb(0 0 0 / 0.22);
+
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 46.5% 1fr;
+  background: #fff;
+  color: var(--text);
+  font-size: 14px;
+}
+
+/* Photo panel */
+
+.account-image-panel {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: hidden;
+  background: #f4f4f4;
+}
+
+.account-photo {
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Form panel */
+
+.account-form-panel {
+  display: grid;
+  justify-items: center;
+  align-items: start;
+  padding: clamp(48px, 10vh, 100px) 32px 48px;
+}
+
+.account-login-panel {
+  --title-size: clamp(2rem, 2.8vw, 2.5rem);
+  --title-gap: 30px;
+  --toggle-gap: 40px;
+  --field-gap: 43px;
+  --divider-top: 40px;
+  --divider-bottom: 22px;
+
+  padding-top: clamp(48px, 18.8vh, 193px);
+}
+
+.account-form-content {
+  width: min(100%, 462px);
+}
+
+.account-title {
+  margin: 0 0 var(--title-gap, 24px);
+  font-size: var(--title-size, clamp(2rem, 3.4vw, 3rem));
+  font-weight: 400;
+  line-height: 1.2;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.account-toggle {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4px;
+  margin-bottom: var(--toggle-gap, 24px);
+  padding: 7px;
+  border-radius: 10px;
+  background: var(--tab-track);
+}
+
+.account-toggle-thumb {
+  position: absolute;
+  top: 7px;
+  bottom: 7px;
+  left: 7px;
+  width: calc(50% - 9px);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.08);
+  transition: transform 0.25s ease;
+}
+
+.account-toggle-thumb-right {
+  transform: translateX(calc(100% + 4px));
+}
+
+.account-toggle-option {
+  position: relative;
+  height: 48px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.account-form {
+  display: grid;
+  gap: var(--field-gap, 36px);
+}
+
+.account-field {
+  display: grid;
+  gap: 8px;
+}
+
+.account-field label {
+  font-weight: 500;
+}
+
+.account-input {
+  width: 100%;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  background: #fff;
+  box-shadow: var(--soft-shadow);
+  color: var(--text);
+  font: inherit;
+}
+
+.account-input::placeholder {
+  color: var(--muted);
+}
+
+.account-input:focus-visible,
+.account-toggle-option:focus-visible,
+.account-eye-button:focus-visible,
+.account-submit-button:focus-visible,
+.account-google-button:focus-visible,
+.account-apple-button:focus-visible {
+  outline: 2px solid #000;
+  outline-offset: 2px;
+}
+
+.account-password-wrapper {
+  position: relative;
+}
+
+.account-password-wrapper .account-input {
+  padding-right: 44px;
+}
+
+.account-eye-button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  display: grid;
+  place-items: center;
+  padding: 4px;
+  border: 0;
+  background: transparent;
+  color: #000;
+  cursor: pointer;
+  transform: translateY(-50%);
+}
+
+.account-error {
+  margin: -16px 0;
+  color: #c62828;
+  font-size: 0.9rem;
+}
+
+.account-submit-button {
+  height: 42px;
+  margin-top: 8px;
+  border: 0;
+  border-radius: 8px;
+  background: #000;
+  color: #fff;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.account-submit-button:hover {
+  background: #262626;
+}
+
+.account-divider {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  margin: var(--divider-top, 36px) 0 var(--divider-bottom, 16px);
+  font-size: 13px;
+}
+
+.account-divider::before,
+.account-divider::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid #8a8a8a;
+}
+
+.account-social-buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.account-google-button,
+.account-apple-button {
+  display: grid;
+  place-items: center;
+  height: 54px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.account-google-button {
+  border: 0;
+  background: #fff;
+  box-shadow: var(--soft-shadow);
+}
+
+.account-google-button:hover {
+  background: #f4f4f4;
+}
+
+.account-apple-button {
+  border: 1px solid #000;
+  background: #000;
+}
+
+.account-apple-button:hover {
+  background: #262626;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .account-toggle-thumb {
+    transition: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .account {
+    grid-template-columns: 1fr;
+  }
+
+  .account-image-panel {
+    display: none;
+  }
+
+  .account-form-panel,
+  .account-login-panel {
+    padding: 40px 16px;
+  }
+
+  .account-title {
+    white-space: normal;
+    text-align: center;
+  }
+}
