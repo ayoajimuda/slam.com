@@ -1,19 +1,19 @@
 'use client'
 
 import Image from 'next/image';
-import {React, useEffect, useState } from 'react'
+
+import { React, useEffect, useState } from 'react'
 import { useForm } from '@mantine/form';
-import {FaApple, FaEye, FaEyeSlash } from 'react-icons/fa'
+import { FaApple, FaEye, FaEyeSlash } from 'react-icons/fa'
 import { FcGoogle } from 'react-icons/fc';
 import { Button, Divider, MantineProvider, PasswordInput, SegmentedControl, SimpleGrid, TextInput } from '@mantine/core'
 import { Check, Eye, EyeOff } from 'lucide-react';
 
-//
-import { ACCOUNT_PHOTOS } from '@/data/accountPhotos';
+import { ACCOUNT_PHOTOS } from '../../data/photosHandle';
 import { PASSWORD_RULES } from '@/data/passwordRules';
 
 import '@mantine/core/styles.css'
-import './accountpage.css'
+import '@/styles/pages-css/account-page.css'
 
 // Toggle options for the log in
 const OPTIONS = [

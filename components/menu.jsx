@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import { usePathname, useRouter } from 'next/navigation'
 import { useCallback, useEffect, useRef, useState } from 'react'
-import '@/styles/menu.css'
+import '@/styles/components-css/menu.css'
 
 function MenuLink({ href, index, onNavigate, children }) {
     const pathname = usePathname()

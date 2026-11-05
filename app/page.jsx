@@ -3,8 +3,8 @@
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 import { HOME_BACKGROUNDS } from '@/data/backgrounds';
-import '../styles/home-page.css';
-import '../styles/glitch.css';
+import '../styles/pages-css/home-page.css';
+import '../styles/effects-css/glitch.css';
 
 const STORAGE_KEY = 'slam-background'
 
