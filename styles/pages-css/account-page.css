@@ -1,0 +1,139 @@
+:root {
+    --title-size: clamp(2rem, 2.8vw, 2.5rem);
+    --title-gap: 20px;
+    --toggle-gap: 24px;
+    --field-gap: 16px;
+    --input-height: 40px;
+    --divider-top: 24px;
+    --divider-bottom: 22px;
+    --soft-shadow: 0 1px 4px rgb(0 0 0 / 0.22);
+}
+
+.account {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 46.5% 1fr;;
+    background: #fff;
+    color: #000;
+}
+
+/* Photo Panel */
+.account-image-panel {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: hidden;
+    background: #f4f4f4;
+}
+
+.account-photo {
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(100%);
+}
+
+/* Form Panel */
+.account-form-panel {
+    display: grid;
+    justify-items: center;
+    align-items: start;
+    padding: clamp(48px, 10vh, 100px) 32px 48px;
+}
+
+.account-login-panel {
+    padding-top: clamp(48px, 18.8vh, 193px);
+}
+
+.account-form-content {
+  width: min(100%, 462px);
+}
+
+.account-title {
+    margin: 0 0 var(--title-gap, 24px);
+    font-size: var(--title-size, clamp(3rem, 3.7vw, 4rem));
+    font-weight: 300;
+    font-family: var(--font-anton);
+    line-height: 1.2;
+    text-align: center;
+    white-space: nowrap;
+}
+
+/* Mantine Override */
+.account .account-toggle {
+    margin-bottom: var(--toggle-gap, 24px);
+    padding: 7px;
+    background: #f1f1f1;
+}
+
+.account .account-toggle-thumb {
+    border-radius: 8px;
+}
+
+.account .account-toggle-label {
+  display: grid;
+  place-items: center;
+  height: 48px;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: var(--font-barlow);
+}
+
+.account-form {
+    display: grid;
+    gap: var(--field-gap, 36px);
+}
+
+.account .account-label {
+    margin-bottom: 8px;
+    font-weight: 500;
+    line-height: 17px;
+    font-family: var(--font-barlow);
+    font-size: 18px;
+}
+
+.account .account-input {
+    min-height: 40px;
+    height: 40px;
+    border-color: #cfcfcf;
+    box-shadow: var(--soft-shadow);
+    font-size: 16px;
+}
+
+.account .account-divider {
+  margin: var(--divider-top, 36px) 0 var(--divider-bottom, 16px);
+}
+
+.account .account-divider .mantine-Divider-label {
+  color: #000;
+  font-size: 13px;
+}
+
+.account .account-google-button {
+  box-shadow: var(--soft-shadow);
+}
+
+/* Password Requirements */
+.account .account-password-rules {
+    list-style: none;
+    margin: -8px 0 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4px 12px;
+    font-family: var(--font-barlow);
+    font-size: 16px;
+    line-height: 1.2;
+}
+
+.account .account-password-rule {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #8a8a8a;
+}
+
+.account .account-password-rule-met {
+    color: #2e7d32;
+}
+

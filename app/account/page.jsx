@@ -4,12 +4,12 @@ import Image from 'next/image';
 
 import { React, useEffect, useState } from 'react'
 import { useForm } from '@mantine/form';
-import { FaApple, FaEye, FaEyeSlash } from 'react-icons/fa'
+import { FaApple } from 'react-icons/fa';
 import { FcGoogle } from 'react-icons/fc';
-import { Button, Divider, MantineProvider, PasswordInput, SegmentedControl, SimpleGrid, TextInput } from '@mantine/core'
-import { Check, Eye, EyeOff } from 'lucide-react';
+import { Button, Checkbox, Divider, MantineProvider, PasswordInput, SegmentedControl, SimpleGrid, TextInput } from '@mantine/core'
+import { Check, Eye, EyeOff, X } from 'lucide-react';
 
-import { ACCOUNT_PHOTOS } from '../../data/photosHandle';
+import { ACCOUNT_PHOTOS } from '@/data/photosHandle';
 import { PASSWORD_RULES } from '@/data/passwordRules';
 
 import '@mantine/core/styles.css'
@@ -165,10 +165,10 @@ export default function AccountPage() {
   
               <SimpleGrid cols={2} spacing={12}>
                 <Button className="account-google-button"variant="white" radius={10} h={54} aria-label="Continue with Google" >
-                  <Image src="/icons/google.svg" alt="" width={24} height={24} />
+                  <FcGoogle size={24} />
                 </Button>
                 <Button color="black" radius={10} h={54} aria-label="Continue with Apple" >
-                  <Image src="/icons/apple.svg" alt="" width={24} height={24} />
+                  <FaApple size={24} />
                 </Button>
               </SimpleGrid>
             </div>
