@@ -65,6 +65,7 @@ export default function AccountPage() {
           emailOrUsername: '',
           password: '',
           repeatedPassword: '',
+          rememberMe: false,
           },
 
           // The rules only apply to sign up, so sign in just needs the existing password
@@ -159,6 +160,15 @@ export default function AccountPage() {
                 <Button type="submit" color="black" radius={8} h={42} mt={8}>
                   {isSignUp ? 'Create Account' : 'Login'}
                 </Button>
+
+                {isSignUp && (
+                  <p className='account-switch'>
+                    Already have an account?{' '}
+                    <button type="button" className="account-switch-link" onClick={() => handleModeChange('signin')}>
+                      Sign in
+                    </button>                  
+                    </p>
+                  )}
               </form>
   
               <Divider className="account-divider" color="#8a8a8a" label="or continue with" />
