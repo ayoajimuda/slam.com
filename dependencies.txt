@@ -1,0 +1,6 @@
+npm install react-icons --save
+npm install lucide-react
+npm install @mantine/core @mantine/hooks @mantine/form @mantine/dates dayjs @mantine/charts recharts @mantine/notifications @mantine/code-highlight @mantine/tiptap @tiptap/pm @tiptap/react @tiptap/extension-link @tiptap/starter-kit @mantine/dropzone @mantine/carousel embla-carousel@^8.5.2 embla-carousel-react@^8.5.2 @mantine/lightbox @mantine/spotlight @mantine/modals @mantine/nprogress
+npx shadcn@latest init
+npm install tailwind @tailwindcss/vite
+npm install tailwindcss @tailwindcss/postcss postcss
