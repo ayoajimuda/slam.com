@@ -1,0 +1,94 @@
+/* Black and white glitch for the home page title.
+   Plays once when the title appears, then loops while it is hovered. */
+
+.home-glitch-effect {
+  /* How far the slices move, as a percentage of the title's width. */
+  --shimmy-distance: 1.2;
+
+  /* The slices of the title shown during the glitch. */
+  --clip-one: polygon(0 2%, 100% 2%, 100% 38%, 95% 38%, 95% 30%, 85% 30%, 85% 38%, 8% 38%, 0 30%);
+  --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+  --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 0 54%);
+  --clip-four: polygon(0 63%, 100% 63%, 100% 80%, 0 80%);
+  --clip-five: polygon(0 12%, 100% 12%, 100% 24%, 0 24%);
+
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+
+  /* The delay lets the title finish fading in first. */
+  animation: home-glitch-effect 0.9s step-end 0.8s 1;
+}
+
+.home-glitch--black {
+  color: #000;
+}
+
+/* Playing in reverse keeps the white slices out of step with the black ones. */
+.home-glitch--white {
+  color: #fff;
+  animation-direction: reverse;
+}
+
+.home-title-wrap:hover .home-glitch-effect {
+  animation-duration: 1.4s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes home-glitch-effect {
+  0% {
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+    clip-path: var(--clip-one);
+    transform: translateX(calc(var(--shimmy-distance) * -1%));
+  }
+  8% {
+    clip-path: var(--clip-two);
+    transform: translateX(calc(var(--shimmy-distance) * 1%));
+  }
+  14% {
+    clip-path: var(--clip-three);
+    transform: translateX(calc(var(--shimmy-distance) * -1%));
+  }
+  20% {
+    clip-path: var(--clip-four);
+    transform: translateX(calc(var(--shimmy-distance) * 1%));
+  }
+  26% {
+    clip-path: var(--clip-two);
+    transform: translateX(calc(var(--shimmy-distance) * -1%));
+  }
+  32% {
+    clip-path: var(--clip-five);
+    transform: translateX(calc(var(--shimmy-distance) * 1%));
+  }
+  38% {
+    clip-path: var(--clip-three);
+    transform: translateX(0);
+  }
+  44% {
+    clip-path: var(--clip-one);
+    transform: translateX(calc(var(--shimmy-distance) * -1%));
+  }
+  50% {
+    clip-path: var(--clip-four);
+    transform: translateX(calc(var(--shimmy-distance) * 1%));
+  }
+  56%,
+  100% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+/* Turns the effect off for people who prefer reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .home-glitch-effect,
+  .home-title-wrap:hover .home-glitch-effect {
+    animation: none;
+  }
+}
